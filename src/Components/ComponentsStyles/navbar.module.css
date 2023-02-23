@@ -1,0 +1,147 @@
+.navBar{
+    margin: 20px 0;
+    display: flex;
+}
+
+.navBar > .firstPart{
+    display: flex;
+    width: 80%;
+}
+
+.navBar > .secondPart{
+    width: 20%;
+}
+
+.firstPart{}
+.secondPart{}
+
+.searchContainer{
+    font-size: 20px;
+    border-radius: 10px;
+    border:solid black 0.5px;
+    padding: 5px;
+    margin: 10px 10px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.searchContainer > button > svg{
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.search{
+    border: none;
+    font-size: 20px;
+}
+
+.search:focus{
+    border: none!important;
+    outline: none;
+}
+
+.search:hover{
+    border: none!important;
+    outline: none;
+}
+
+.search:hover{
+    border:solid rgba(0, 0, 255, .2) 0.5px;
+}
+
+.logoContainer > img{
+    object-fit: contain;
+    width: 100px;
+    aspect-ratio: 3/2;
+}
+
+.authContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.noBtn{
+    border: none;
+    background-color: white;
+}
+
+.btn{
+    background-color: rgb(75, 132, 243);
+    padding: 4px 12px 6px;
+    border: rgb(75, 132, 243);
+    color: white;
+    border-radius: 15px;
+}
+
+.btn:hover{
+    background-color: rgba(69, 114, 201, 1);
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width: 750px){
+    .navBar > .firstPart{
+        display: flex;
+        width: 70%;
+    }
+
+    .navBar > .secondPart{
+        width: 30%;
+    }
+
+    .authContainer{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    navBar > .firstPart{
+        display: flex;
+        width: 50%;
+    }
+
+    .navBar > .secondPart{
+        width: 50%;
+    }
+
+    .logoContainer > img{
+        display: none;
+    }
+
+    .search{
+        margin: 10px 10px 0;
+        text-align: center;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 10px;
+        border:solid black 0.5px;
+    }
+
+    .btn{
+        background-color: rgb(75, 132, 243);
+        padding: 2px 6px 3px;
+        border: rgb(75, 132, 243);
+        color: white;
+        border-radius: 15px;
+    }
+
+    .link{
+        text-decoration: none;
+        color: inherit;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .link{
+        display: none;
+    }
+    .btn{
+        display: none;
+    }
+}

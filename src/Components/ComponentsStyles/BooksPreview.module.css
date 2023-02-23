@@ -1,0 +1,175 @@
+.bookContainer{
+    display: flex;
+    border: solid white;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.heartContainer{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.heart{
+    background-color: white;
+    border:none;
+    color: rgba(100, 50, 300, 1);
+    margin-top: 10px;
+    margin-left: 55px;
+
+}
+
+.heart > span > svg{
+    height: 30px;
+    width: 30px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+
+
+.heart:hover{
+    border:none;
+    color:red;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+
+
+.imgBookContainer{
+
+}
+
+.imgBookContainer > img{
+    width: 300px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-top: 100px;
+
+}
+
+.infoBookContainer {
+    object-fit: contain;
+    width: 60%;
+}
+
+.infoBookContainer > p{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.infoBookContainer > h3{
+    font-size: 32px;
+    line-height: 20px;
+}
+
+.infoBookContainer > h5{
+    color: brown;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.infoBookContainer > h5:hover{
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.listItem{
+    margin: 0 0 20px;
+    color:#444;
+    font-weight: 300;
+}
+
+.list{
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px){
+    .bookContainer{
+        display: flex;
+        border: solid white;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .imgBookContainer > img{
+        width: 150px;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+    .infoBookContainer > p{
+        font-size: 9px;
+        line-height: 24px;
+    }
+
+    .infoBookContainer > h3{
+        font-size: 22px;
+        line-height: 20px;
+    }
+
+    .infoBookContainer > h5{
+        color: brown;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .infoBookContainer > h5:hover{
+        color: red;
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .bookContainer{
+        display: flex;
+        border: solid white;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+        background-color: white;
+        padding: 0px;
+        border-radius: 5px;
+    }
+
+    .imgBookContainer > img{
+        margin-top: 20px;
+        width: 90px;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+    .infoBookContainer > p{
+        font-size: 5px;
+        line-height: 12px;
+    }
+
+    .infoBookContainer > h3{
+        font-size: 15px;
+        line-height: 10px;
+    }
+
+    .infoBookContainer > h5{
+        color: brown;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .infoBookContainer > h5:hover{
+        color: red;
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
