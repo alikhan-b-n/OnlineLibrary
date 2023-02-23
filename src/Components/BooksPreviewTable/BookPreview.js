@@ -20,7 +20,6 @@ export function BookPreview (props)  {
     const [isFav, setIsFav] = useState(false)
     const toCheck = () =>{
         setIsFav(auth.fav.includes(props.obj._id))
-        console.log('dsa')
     }
 
 

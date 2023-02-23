@@ -32,6 +32,13 @@
     object-fit: contain;
 }
 
+.profileContainer > a > svg{
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
 .search{
     border: none;
     font-size: 20px;

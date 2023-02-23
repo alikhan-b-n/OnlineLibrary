@@ -2,10 +2,13 @@ import {NavLink, Outlet} from "react-router-dom";
 import classes from "./ComponentsStyles/navbar.module.css"
 import React,{useState} from "react";
 import {Search} from "./Search";
-
-
+import {useAuth} from "../hooks/useAuth";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export function Navbar(){
     const [Shown, setIsShown] = useState(false)
+    const {auth} = useAuth()
+    console.log(auth.isLoged)
     return(
         <>
             <nav className={classes.navBar}>
@@ -19,6 +22,16 @@ export function Navbar(){
                 </div>
 
                 <div className={classes.secondPart}>
+                    {auth.isLoged ?
+                    <div className={classes.profileContainer}>
+                        <Navbar to="/profile">
+                            <span>
+                                <FontAwesomeIcon icon={faUser}/>
+                            </span>
+                        </Navbar>
+
+                    </div>
+                        :
                     <div className={classes.authContainer}>
                         <p>
                             <span className={classes.btn}>
@@ -34,6 +47,7 @@ export function Navbar(){
                             </span>
                         </p>
                     </div>
+                    }
                 </div>
             </nav>
             <Outlet/>

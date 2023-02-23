@@ -1,23 +1,20 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
-import {NavLink, useNavigate,  useLocation} from "react-router-dom";
+import React, { useRef, useState, useEffect } from "react";
+import {NavLink} from "react-router-dom";
 import classes from "./ComponentsStyles/auth.module.css";
 import axios from "../api/axios";
 import {useAuth} from "../hooks/useAuth";
-
 
 export function Login(){
     const { setAuth } =  useAuth()
     const emailRef = useRef();
     const errRef = useRef();
     const LOGIN_URL = '/usersLogin'
-    const navigate = useNavigate()
-    const location = useLocation()
-    const from = location.state.from.pathname || '/';
 
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
     const [showPwd, setShowPwd] = useState(false)
     const [errMsg, setErrMsg] = useState("");
+    const [success, setSuccess] = useState(false);
 
     useEffect(() =>{
         emailRef.current.focus();
@@ -45,11 +42,10 @@ export function Login(){
                 });
             console.log(JSON.stringify(response))
             console.log(response.data.logged_user.favoriteBooks)
-            setAuth({user:response.data.logged_user.user, email:email, id:response.data.logged_user._id, fav:response.data.logged_user.favoriteBooks}) //ADD id and username
+            setAuth({user:response.data.logged_user.user, email:email, id:response.data.logged_user._id, fav:response.data.logged_user.favoriteBooks, isLoged:true, isAuthor:response.data.logged_user.isAuthor}) //ADD id and username
+            setSuccess(true)
             setEmail('')
             setPwd('')
-            setEmail('')
-            navigate(from, {replace: true})
         }catch (err) {
             if (!err.response){
                 setErrMsg('No Server Response')
@@ -62,7 +58,19 @@ export function Login(){
         }
     }
     return(
-         <section onSubmit={handleSubmit} className={classes.formContainer}>
+        <>
+            <>
+                {
+                    success? (
+                        <section className={classes.formContainer}>
+                            <h1>You are logged in!</h1>
+                            <br/>
+                            <p>
+                                <NavLink to="/" className={classes.link}>Go to Home</NavLink>
+                            </p>
+                        </section>
+                    ) : (
+                        <section onSubmit={handleSubmit} className={classes.formContainer}>
                             <p ref={errRef} className={errMsg? classes.errmsg  :
                                 "offscreen"} aria-live={"assertive"}>{errMsg}</p>
                             <h1>Welcome back.</h1>
@@ -114,7 +122,9 @@ export function Login(){
 
                                 <button className={classes.SubmitBtn}>Sign in</button>
                             </form>
-         </section>
-
+                        </section>
+                    )}
+            </>
+        </>
     )
 }

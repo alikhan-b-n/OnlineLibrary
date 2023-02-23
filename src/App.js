@@ -8,6 +8,7 @@ import {Navbar} from "./Components/Navbar";
 import {Register} from "./Components/Register";
 import {NotFound} from "./Components/NotFound";
 import {RequireAuth} from "./Components/RequireAuth";
+import {Profile} from "./Components/Profile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                   <Route element={<Navbar/>}>
                       <Route path="/" element={<Home />} />
                       <Route path="/book/:id" element={<Book />}/>
+                      <Route path="/profile" element={<Profile/>}/>
                   </Route>
               </Route>
               <Route path="/signin" element={<Login />} />
